@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Parisienne&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --whiteColor: #ffffff;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Lobster', cursive;
+}
+
+body {
+    background-color: var(--whiteColor);
+    line-height: 1.428;
+    color: var(--whiteColor);
+}
+
+#container.parallax-container {
+    position: relative;
+    max-width: 2560px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgb(14, 81, 133) 0%, rgb(26, 139, 178) 60%, rgb(33, 159, 193) 100%);
+}
+
+#container .christmas-scene {
+    position: relative;
+}
+
+#container .christmas-scene::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background: url(../img/top-snow-pattern.png);
+    background-repeat: repeat-x;
+    z-index: 10;
+}
+
+.christmas-scene .layer {
+    width: 100%;
+}
+
+.christmas-scene .layer-photo {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 100%;
+    height: 78.9rem;
+}
+
+.christmas-scene .l {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.christmas-scene .l-1 {
+    position: relative;
+    transform: translate3d(-1.404rem, -5.892rem, 0);
+}
+
+.christmas-scene .layer-5 {
+    background-image: url(../img/parallax-mobile/layer5.png);
+}
+
+.christmas-scene .l-2 {
+    transform: translate3d(-1.053rem, -4.419rem, 0);
+}
+
+.christmas-scene .layer-4 {
+    background-image: url(../img/parallax-mobile/layer4.png);
+}
+
+.christmas-scene .l-3 {
+    transform: translate3d(-0.702rem, -2.298rem, 0);
+}
+
+.christmas-scene .layer-3 {
+    background-image: url(../img/parallax-mobile/layer3.png);
+}
+
+.christmas-scene .l-4 {
+    transform: translate3d(-0.351rem, -1.149rem, 0);
+}
+
+.christmas-scene .layer-2 {
+    background-image: url(../img/parallax-mobile/layer2.png);
+}
+
+.christmas-scene .l-5 {
+    transform: translate3d(0, 0, 0);
+}
+
+.christmas-scene .layer-1 {
+    background-image: url(../img/parallax-mobile/layer1.png);
+    background-position: 36% bottom;
+}
+
+.countdown-container {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    top: 0;
+    font-size: 3rem;
+    color: var(--whiteColor);
+    width: 100%;
+}
+
+.countdown-container .countdown-globe {
+    height: 20rem;
+    text-align: center;
+    padding-top: 3rem;
+    line-height: 1.3;
+    z-index: 2;
+    flex-basis: 25%;
+}
+
+.countdown-container .countdown-globe div {
+    font-size: 2rem;
+}
+
+#container .merry-christmas-text {
+    font-family: 'Parisienne', cursive;
+    position: absolute;
+    top: 10rem;
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    color: var(--whiteColor);
+    z-index: 99;
+}
+
+#container .christmas-tree {
+    position: absolute;
+    left: 50%;
+    bottom: 5.5rem;
+    width: 26.25rem;
+    margin-left: -13.125rem;
+}
+
+#container .mail-pole {
+    position: absolute;
+    left: 50%;
+    bottom: 5rem;
+    margin-left: -21.875rem;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#container .mail-pole img {
+    width: 8.75rem;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#container .icons-container {
+    width: 26rem;
+    position: absolute;
+    right: 50%;
+    bottom: .5rem;
+    margin-right: -13rem;
+    z-index: 10;
+}
+
+#container .icons-container a img {
+    width: 3.6rem;
+}
+
+.canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(14, 81, 133) 0%, rgb(26, 139, 178) 60%, rgb(33, 159, 193)100%);
+    z-index: 99;
+    overflow: hidden;
+}
+
+.loader::after {
+    content: "";
+    position: absolute;
+    background: url(../img/intro.png) no-repeat;
+    background-size: contain;
+    width: 7rem;
+    height: 7rem;
+    margin-left: -3.5rem;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: snoflake-rotate 2s linear infinite;
+}
+
+.loader.fade-out {
+    top: 110%;
+    opacity: 0;
+}
+
+@keyframes snoflake-rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@media(min-width: 565px) {
+    .countdown-container {
+        width: 60rem;
+        margin-left: -30rem;
+        left: 50%;
+        font-size: 4rem;
+    }
+
+    .countdown-container .countdown-globe {
+        padding-top: 6.5rem;
+    }
+
+    .countdown-container .countdown-globe div {
+        font-size: 2.6rem;
+    }
+
+    .countdown-container .countdown-globe::after {
+        content: "";
+        background: url(../img/countdown-globe.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin-left: -5.5rem;
+        top: -4rem;
+        z-index: -1;
+    }
+
+    #container .merry-christmas-text {
+        top: 15rem;
+        font-size: 8rem;
+    }
+
+    #container .christmas-tree {
+        bottom: 3.5rem;
+    }
+
+    #container .icons-container {
+        right: 10rem;
+        bottom: 1.5rem;
+        margin-right: 0;
+    }
+}
+
+@media(min-width: 736px) {
+    #container .happy-new-year {
+        position: absolute;
+        background: url(../img/happy-new-year.png) no-repeat;
+        background-size: contain;
+        width: 30rem;
+        height: 11.2rem;
+        top: 27rem;
+        left: 50%;
+        margin-left: -15rem;
+    }
+}
+
+@media(min-width: 1024px) {
+    .christmas-scene .layer-5 {
+        background-image: url(../img/parallax/layer5.png);
+    }
+
+    .christmas-scene .layer-4 {
+        background-image: url(../img/parallax/layer4.png);
+    }
+
+    .christmas-scene .layer-3 {
+        background-image: url(../img/parallax/layer3.png);
+    }
+
+    .christmas-scene .layer-2 {
+        background-image: url(../img/parallax/layer2.png);
+    }
+
+    .christmas-scene .layer-1 {
+        background-image: url(../img/parallax/layer1.png);
+    }
+}
